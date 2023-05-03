@@ -1,36 +1,25 @@
 import React, { useState } from 'react';
+import Form from 'react-bootstrap/Form'
 
 function SignUp() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    alert(`Email: ${email} \nPassword: ${password}`);
-  };
-
+  const fields = [
+    {label: 'Email', type: 'text', placeholder: 'Email'},
+    {label: 'Username', type: 'text', placeholder: 'Username'},
+    {label: 'Password', type: 'password', placeholder: 'Password'}
+  ]
   return (
     <div className="signin-container">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        />
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-        />
-        <button type="submit">Sign Up</button>
-      </form>
+    <Form>
+      {fields.map((field) => {
+        return (
+            <Form.Group className = "ab-3" controlId = "signUpForm">
+              <Form.Label>{field.label}</Form.Label>
+              <Form.Control type = {field.type} placeholder = {field.placeholder}/>
+            </Form.Group>
+        )
+      })}
+      <button type="submit">Sign In</button>
+    </Form>
     </div>
   );
 }

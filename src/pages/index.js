@@ -27,7 +27,7 @@ const Home = () => {
         <p>In here, you can see all the recommended <br></br> shops available in the area.</p>
       <button type='button'>See more</button>
       </div> 
-      {/* <div className='col'>
+        {/* <div className='col'>
         <div className='card card1'></div>
         <div className='card card2'></div>
         <div className='card card3'></div>
