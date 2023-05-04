@@ -12,8 +12,7 @@ function SignIn() {
   return (
     <div className="signin-container">
       <h2>Sign In</h2>
-      <div></div>
-      <form onSubmit={handleSubmit}>
+      <form className='form' onSubmit={handleSubmit}>
         <label htmlFor="email">Email:</label>
         <input
           type="email"

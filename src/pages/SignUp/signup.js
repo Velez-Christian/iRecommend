@@ -7,20 +7,28 @@ function SignUp() {
     {label: 'Username', type: 'text', placeholder: 'Username'},
     {label: 'Password', type: 'password', placeholder: 'Password'}
   ]
+
+  const [emailaAddress, setEmail] = useState('email@example.com');
+  const [userName, setUsername] = useState('Christian');
+  const [password, setPassword] = useState('**************');
+
   return (
-    <div className="signin-container">
-    <Form>
-      {fields.map((field) => {
-        return (
-            <Form.Group className = "ab-3" controlId = "signUpForm">
-              <Form.Label>{field.label}</Form.Label>
-              <Form.Control type = {field.type} placeholder = {field.placeholder}/>
-            </Form.Group>
-        )
-      })}
-      <button type="submit">Sign In</button>
+    <Form className = "signin-container">
+        {fields.map((field) => {
+          return (
+              <Form.Group className = "form" controlId = "signUpForm">
+                <Form.Label>{field.label}</Form.Label>
+                <Form.Control type = {field.type} placeholder = {field.placeholder}
+                  onChange = {(e) => setEmail(e.target.value)} />
+              </Form.Group>
+          )
+        })}
+          <button type="submit">Sign In</button>
+          <br />
+          <h2>Email: {emailaAddress}</h2>
+          <h2>Username: {userName}</h2>
+          <h2>Password: {password}</h2>
     </Form>
-    </div>
   );
 }
 
